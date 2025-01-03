@@ -28,3 +28,8 @@ FreshCart is an E-Commerce Angular Application designed to provide users with a 
 ### Order Management
 - **View Orders**: Check your past orders, including order details, payment status, and delivery status.
 - **Online Payment**: Securely pay for your orders using an online payment gateway.
+
+## Technologies
+- HTML,CSS,Bootstap
+- Typescript
+- Angular
