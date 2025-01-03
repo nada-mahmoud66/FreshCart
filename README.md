@@ -1,27 +1,30 @@
-# Ecommerce
+# FreshCart
+FreshCart is an E-Commerce Angular Application designed to provide users with a seamless shopping experience. It allows users to browse products, manage their shopping cart, and place orders. The application is built using Angular and integrates with a backend API to fetch and manage data.
+## Features
+### User Authentication
+- **Login**: Users can log in using their email and password.
+- **Register**: New users can create an account by providing their name, email, password, and phone number.
+- **Logout**: Users can log out of their account securely.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4.
+### Product Management
+- **Browse Products**: View a list of products with details like name, price, and ratings.
+- **Product Details**: Get detailed information about a specific product, including its description, price, and category.
+- **Filter Products**: Easily filter products by category, subcategory, or brand.
 
-## Development server
+### Category and Subcategory Management
+- **Categories**: Browse products by category.
+- **Subcategories**: Explore products under specific subcategories.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Brand Management
+- **Brands**: Browse products by brand.
+- **Brand Products**: View all products under a specific brand.
 
-## Code scaffolding
+### Shopping Cart
+- **Add to Cart**: Add products to your shopping cart.
+- **Update Cart**: Adjust the quantity of items in your cart.
+- **Remove Items**: Remove unwanted items from your cart.
+- **Checkout**: Proceed to checkout and place your order.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Order Management
+- **View Orders**: Check your past orders, including order details, payment status, and delivery status.
+- **Online Payment**: Securely pay for your orders using an online payment gateway.
