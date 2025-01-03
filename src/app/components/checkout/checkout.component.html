@@ -1,0 +1,38 @@
+<div class="container">
+    
+    <form [formGroup]="shippingAddressForm" (ngSubmit)=" handleShippingForm(shippingAddressForm)">
+        
+
+       
+        <label class="mt-3" for="details">Details:</label>
+        <input formControlName="details" class="form-control mb-2" id="details" type="details" [ngClass]="{'is-invalid': details?.invalid && details?.touched,'is-valid': details?.valid && details?.touched}"/>
+        <div *ngIf="details?.errors&&details?.touched" class="alert alert-danger">
+           
+            <p *ngIf="details?.getError('required')" class="m-0"> details is required</p>
+            
+        </div>
+        <label for="city">City:</label>
+        <input formControlName="city" class="form-control mb-2" id="city" type="city" [ngClass]="{'is-invalid': city?.invalid && city?.touched,'is-valid': city?.valid && city?.touched}"/>
+        <div *ngIf="city?.errors&&city?.touched" class="alert alert-danger">
+            
+            <p *ngIf="city?.getError('required')" class="m-0"> city is required</p>
+            
+        </div>
+        <label for="phone">phone:</label>
+        <input formControlName="phone" class="form-control mb-2" id="phone" type="phone" [ngClass]="{'is-invalid': phone?.invalid && phone?.touched,'is-valid': phone?.valid && phone?.touched}"/>
+        <div *ngIf="phone?.errors&&phone?.touched" class="alert alert-danger">
+            
+            <p *ngIf="phone?.getError('required')" class="m-0"> phone is required</p>
+            
+        </div>
+        
+        <button [disabled]="shippingAddressForm.invalid" type="submit" class="btn btn-info border-none border-0 text-white ms-auto d-block bg-main mt-4">
+            <i *ngIf="isloading" class="fas fa-spinner fa-spin"></i>
+            <span *ngIf="!isloading">Pay</span>
+        </button>
+
+    </form>
+
+</div>
+
+

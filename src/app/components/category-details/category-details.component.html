@@ -1,0 +1,57 @@
+<!-- <div class="container my-4">
+    <div *ngIf="categoryDetails" class="category-details text-center mb-5">
+    <h2 class="fw-bold text-main">{{ categoryDetails.name }}</h2>
+    <img [src]="categoryDetails.image" alt="{{ categoryDetails.name }}" class="category-image img-fluid rounded mb-3">
+    <p class="text-muted">{{ categoryDetails.slug | titlecase }}</p>
+    <a [routerLink]="['/categories/categoryProducts', categoryDetails._id]" class="btn bg-main text-white my-2 w-20">
+      View Products
+    </a>
+  </div>
+  <div class="subcategories">
+    <h4 class="fw-bold text-main mb-4 text-center">Subcategories</h4>
+    <div class="row">
+      <div *ngFor="let subcategory of subcategories" class="col-md-4 col-sm-6 col-12 mb-4">
+        <div class="card shadow-sm border-0 h-100">
+          
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">{{ subcategory.name }}</h5>
+            <a [routerLink]="['/categories/subcategory', subcategory._id]" class="btn bg-main text-white my-2 w-30">
+              View Products
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+</div> -->
+<div class="container my-4">
+  <!-- Category Details Section -->
+  <div *ngIf="categoryDetails" class="category-details mb-5">
+    <div class="text-center">
+      <img [src]="categoryDetails.image" alt="{{ categoryDetails.name }}" class="category-image img-fluid rounded mb-3">
+      <h2 class="fw-bold text-main mt-3">{{ categoryDetails.name }}</h2>
+      <p class="text-muted mb-4">{{ categoryDetails.slug | titlecase }}</p>
+      <a [routerLink]="['/categories/categoryProducts', categoryDetails._id]" class="btn btn-main btn-lg text-white px-4 py-2">
+        View Products
+      </a>
+    </div>
+  </div>
+
+  <!-- Subcategories Section -->
+  <div class="subcategories">
+    <h4 class="fw-bold text-main text-center mb-4">Explore Subcategories</h4>
+    <div class="row g-3">
+      <div *ngFor="let subcategory of subcategories" class="col-md-4 col-sm-6">
+        <div class="card h-100 shadow border-0">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold text-main">{{ subcategory.name }}</h5>
+            <a [routerLink]="['/categories/subcategory', subcategory._id]" class="btn btn-outline-main btn-sm mt-3 px-3 py-1">
+              View Products
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

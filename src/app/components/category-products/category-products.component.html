@@ -1,0 +1,11 @@
+
+<!-- <h2>products of category</h2> 
+<h2 *ngFor="let product of filterForProducts">{{product.title}}</h2> -->
+
+
+
+<div class="container">
+    <!-- <h4 class="text-main category-header">Category Products:</h4> -->
+    <app-product [products]="filterForProducts" [paginationEnabled]="false"></app-product>
+</div> 
+

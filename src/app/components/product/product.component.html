@@ -1,0 +1,73 @@
+<!-- <section class="pt-5">
+    
+    <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4">
+      <div class="col" *ngFor="let product of products">
+        <div class="card justify-content-around align-items-center p-2">
+            <img class="w-100" [src]="product.imageCover" alt="" />
+            <div class="productDetails p-1 pt-2">
+              <h4 class="small main-color fw-bolder">
+                {{ product.category.name }}
+              </h4>
+              <h3 class="small">{{ product.title }}</h3>
+              <div
+                class="product-footer small d-flex justify-content-between align-items-center"
+              >
+                <span class="">{{ product.price | currency : "EGP " }}</span>
+                <div class="rating">
+                  <i class="fa-solid fa-star rating-color"></i>
+                  <span> {{ product.ratingsAverage }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            
+            class="main-btn small card-btn w-100"
+          >
+            <i class="fa-solid fa-plus"></i> Add to cart
+          </button>
+        </div>
+      </div>
+    
+    
+  </section> -->
+
+<div class="container">
+  <div class="row">
+    <div *ngFor="let product of products" class="col-md-2">
+      <div class="product px-2 py-4">
+        <a class="text-decoration-none" [routerLink]="['/products/productDetails',product._id]">
+          <img class="w-100" src={{product.imageCover}} alt=""/>
+          <span class="text-main fw-bold font-sm">{{product.category.name}}</span>
+          <h3 class="h6 fw-bolder">{{product.title.split(' ').slice(0,2).join(' ')}}</h3>
+          <div class="d-flex align-items-center justify-content-between">
+            <span class="text-muted fw-bold font-sm">{{ product.price | currency : "EGP " }}</span>
+            <div>
+              <i class="fas fa-star rating-color"></i>
+              <span class="text-muted fw-bold font-sm">{{product.ratingsAverage}}</span>
+            </div>
+          </div>
+          
+        </a>
+        <button (click)="addToCart(product._id)" class="btn bg-main text-white my-2 w-100">+Add</button>
+        
+      </div>
+
+    </div>
+  </div>
+
+  
+
+<!-- Pagination Controls -->
+  <div *ngIf="paginationEnabled" class="d-flex justify-content-center my-4">
+    <button class="btn btn-secondary mx-1" (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">
+      Previous
+    </button>
+    <span class="mx-2">Page {{ currentPage }} of {{ totalPages }}</span>
+    <button class="btn btn-secondary mx-1" (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">
+      Next
+    </button>
+  </div>
+</div>
+
+

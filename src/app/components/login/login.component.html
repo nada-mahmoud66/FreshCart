@@ -1,0 +1,30 @@
+<div class="container">
+    <h4 class="mt-4 fw-bold">Login now:</h4>
+    <form (ngSubmit)="handleLogin(loginForm)" [formGroup]="loginForm">
+        
+
+       
+        <label for="email">Email:</label>
+        <input formControlName="email" class="form-control mb-2" id="email" type="email" [ngClass]="{'is-invalid': email?.invalid && email?.touched,'is-valid': email?.valid && email?.touched}"/>
+        <div *ngIf="email?.errors&&email?.touched" class="alert alert-danger">
+            <p *ngIf="email?.getError('email')" class="m-0"> email is invalid</p>
+            <p *ngIf="email?.getError('required')" class="m-0"> email is required</p>
+            
+        </div>
+        <label for="password">Password:</label>
+        <input formControlName="password" class="form-control mb-2" id="password" type="password" [ngClass]="{'is-invalid': password?.invalid && password?.touched,'is-valid': password?.valid && password?.touched}"/>
+        <div *ngIf="password?.errors&&password?.touched" class="alert alert-danger">
+            <p *ngIf="password?.getError('pattern')" class="m-0"> password must start with uppercase then from 3 to 10</p>
+            <p *ngIf="password?.getError('required')" class="m-0"> password is required</p>
+            
+        </div>
+        
+        <button [disabled]="loginForm.invalid" type="submit" class="btn btn-info border-none border-0 text-white ms-auto d-block bg-main mt-4">
+            <i *ngIf="isloading" class="fas fa-spinner fa-spin"></i>
+            <span *ngIf="!isloading">Login</span>
+        </button>
+
+    </form>
+
+</div>
+
